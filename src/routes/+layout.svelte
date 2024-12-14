@@ -1,5 +1,7 @@
 <script>
 	let { children } = $props();
+
+	export const prerender = true;
 </script>
 
 <h1><a href="/">NoNotTools</a></h1>
