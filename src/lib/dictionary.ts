@@ -1,5 +1,4 @@
 import sowpods from './sowpods.json';
-import google from './google.json';
 
 export const scrabbleDict = new Set<string>();
 const reducedgex = /^(\d+)(\w+)$/;
@@ -25,10 +24,3 @@ export const isScrabbleWord = (word: string) => {
 			return scrabbleDict.has(word);
 	}
 };
-
-export const commonDict = new Set<string>(google);
-for (const word of commonDict) {
-	if (!isScrabbleWord(word)) {
-		commonDict.delete(word);
-	}
-}

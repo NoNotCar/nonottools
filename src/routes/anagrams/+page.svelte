@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { sortByCommon } from '$lib/common';
 	import { getAnagrams } from './anagrams';
 	const MAX_RESULTS = 10000;
 
@@ -12,7 +13,7 @@
 			out.push(ana);
 			if (!rem--) break;
 		}
-		results = out.sort();
+		results = sortByCommon(out.sort());
 	};
 </script>
 
