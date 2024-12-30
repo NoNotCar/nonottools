@@ -17,6 +17,10 @@
 	};
 </script>
 
+<svelte:head>
+	<title>Anagrams Generator</title>
+</svelte:head>
+
 <h2>Anagrams Generator</h2>
 <input bind:value={input} />
 <button onclick={evaluate}>Find anagrams</button>

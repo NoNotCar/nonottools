@@ -14,6 +14,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Dictionary Regex</title>
+</svelte:head>
+
 <h2>Dictionary Regex</h2>
 <input bind:value={regexInput} />
 <button onclick={evaluate}>Find words</button>

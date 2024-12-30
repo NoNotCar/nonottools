@@ -57,6 +57,10 @@
 	};
 </script>
 
+<svelte:head>
+	<title>Cryptic Crossword Helpers</title>
+</svelte:head>
+
 <h2>Cryptic Crossword Helpers</h2>
 <input bind:value={input} />
 <button onclick={anagrams}>Anagrams</button>
