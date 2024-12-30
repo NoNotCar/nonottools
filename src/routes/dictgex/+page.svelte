@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { scrabbleDict } from '$lib/dictionary';
+	import { dictgex } from '$lib/dictgex';
 
 	let regexInput = $state('');
 	let currentRegex = $state<RegExp>();
@@ -8,10 +8,9 @@
 		currentRegex = new RegExp(`^${regexInput}$`, 'gmi');
 	};
 
-	const fullWords = [...scrabbleDict].join('\n');
 	let results = $derived.by(() => {
 		if (!currentRegex) return;
-		return Array.from(fullWords.matchAll(currentRegex), (m) => m[0]);
+		return dictgex(currentRegex);
 	});
 </script>
 

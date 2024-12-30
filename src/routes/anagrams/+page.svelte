@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { sortByCommon } from '$lib/common';
-	import { getAnagrams } from './anagrams';
+	import { getAnagrams } from '$lib/anagrams';
 	const MAX_RESULTS = 10000;
 
 	let input = $state('');

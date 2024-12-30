@@ -32,7 +32,7 @@ export function generateUniqueSublists(input: string) {
 	return [...result].sort();
 }
 
-function difference(first: string, second: string): string {
+export function stringDiff(first: string, second: string): string {
 	const result: string[] = [];
 	const secondCounts = new Counter<string>();
 
@@ -62,7 +62,7 @@ export function* getAnagrams(src: string, maxWords = 1): Iterable<string> {
 			yield lesser;
 		}
 		for (const first of generateUniqueSublists(sorted)) {
-			const rem = difference(sorted, first);
+			const rem = stringDiff(sorted, first);
 			if (rem < first) {
 				continue;
 			}

@@ -1,9 +1,15 @@
 import { describe, expect, it } from 'vitest';
-import { getAnagrams, generateUniqueSublists } from './anagrams';
+import { getAnagrams, generateUniqueSublists, stringDiff } from './anagrams';
 
 describe('generateUniqueSublists', () => {
 	it('works', () => {
 		expect(generateUniqueSublists('abb')).toEqual(['a', 'ab', 'b', 'bb']);
+	});
+});
+
+describe('stringDiff', () => {
+	it('works', () => {
+		expect(stringDiff('caramel', 'ram')).toBe('cael');
 	});
 });
 describe('getAnagrams', () => {
