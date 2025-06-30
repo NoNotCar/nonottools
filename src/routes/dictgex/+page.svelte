@@ -19,7 +19,7 @@
 </svelte:head>
 
 <h2>Dictionary Regex</h2>
-<input bind:value={regexInput} />
+<input bind:value={regexInput} autocorrect="off" />
 <button onclick={evaluate}>Find words</button>
 {#if results}
 	<h3>Results</h3>
