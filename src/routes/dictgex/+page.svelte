@@ -5,12 +5,12 @@
 	let currentRegex = $state<RegExp>();
 
 	const evaluate = () => {
-		currentRegex = new RegExp(`^${regexInput}$`, 'gmi');
+		currentRegex = new RegExp(`^${regexInput}$`);
 	};
 
 	let results = $derived.by(() => {
 		if (!currentRegex) return;
-		return dictgex(currentRegex);
+		return [...dictgex(currentRegex)];
 	});
 </script>
 

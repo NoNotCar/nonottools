@@ -24,13 +24,11 @@
 		const regex = new RegExp(
 			`^.*${getLetters(input)
 				.map((l) => l.toLowerCase())
-				.join('.*')}.*$`,
-			'gmi'
+				.join('.*')}.*$`
 		);
 		const superWords = dictgex(regex);
 		results = sortByCommon(
-			superWords
-				.map((s) => [s, stringDiff(s, input)])
+			Array.from(superWords, (s) => [s, stringDiff(s, input)])
 				.filter(([_, rem]) => scrabbleDict.has(rem))
 				.map(([s, rem]) => `${s} - ${rem}`)
 		);
@@ -50,10 +48,9 @@
 		const regex = new RegExp(
 			`^.?${getLetters(input)
 				.map((l) => l.toLowerCase())
-				.join('.')}.?$`,
-			'gmi'
+				.join('.')}.?$`
 		);
-		results = sortByCommon(dictgex(regex));
+		results = sortByCommon([...dictgex(regex)]);
 	};
 </script>
 
