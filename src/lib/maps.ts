@@ -16,6 +16,10 @@ export class DefaultMap<K, T> {
 		this.m.set(k, v);
 		return v;
 	}
+
+	frozen(): ReadonlyMap<K, T> {
+		return this.m;
+	}
 }
 
 export class ListMap<K, T> extends DefaultMap<K, T[]> {
