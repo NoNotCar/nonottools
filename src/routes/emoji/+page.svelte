@@ -4,6 +4,9 @@
 	let { data }: { data: PageData } = $props();
 </script>
 
+<svelte:head>
+	<title>All Emoji</title>
+</svelte:head>
 <h2>All Emoji</h2>
 {#each Object.entries(data) as [category, emoji]}
 	<h3>{category}</h3>
